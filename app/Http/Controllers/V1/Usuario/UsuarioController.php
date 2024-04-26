@@ -24,7 +24,6 @@ class UsuarioController extends Controller
             'username' => 'required|min:5|max:30|unique:usuarios,username',
             'email'    => 'required|unique:usuarios,email',
             'password' => 'required|confirmed',
-            'estatus'  => 'required|' . Rule::in(ModelsUsuario::ESTATUS_ACTIVO, ModelsUsuario::ESTATUS_INACTIVO),
         ]);
 
         return Usuario::create($usuario);

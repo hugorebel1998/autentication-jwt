@@ -31,8 +31,13 @@ class Usuario extends Model
         'nombre_completo'
     ];
 
+    protected $attributes = [
+        'estatus' => self::ESTATUS_ACTIVO
+    ];
+
     protected $hidden = [
         'updated_at',
+        'deleted_at'
     ];
 
     use HasFactory, HasUlids, SoftDeletes;
