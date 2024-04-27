@@ -40,6 +40,10 @@ class Usuario extends Model
         'deleted_at'
     ];
 
+    protected $casts = [
+        'password' => 'hashed'
+    ];
+
     use HasFactory, HasUlids, SoftDeletes;
 
     protected function nombreCompleto(): Attribute
